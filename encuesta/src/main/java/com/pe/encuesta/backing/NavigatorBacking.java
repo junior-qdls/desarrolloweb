@@ -31,9 +31,6 @@ public class NavigatorBacking implements Serializable {
 	}
 	
 	
-	
-	
-	
 	public void loginNavigator(){
 		try {
 			Thread.sleep(10000);

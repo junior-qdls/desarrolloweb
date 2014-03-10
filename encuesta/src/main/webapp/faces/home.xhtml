@@ -1,59 +1,16 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets" >
-<h:head>
-<meta charset="utf-8"></meta>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"> </meta>
-
-<ui:include src="/faces/fragments/resources.xhtml"></ui:include>
-<script type="text/javascript">
-$(function(){
-	jsf.ajax.addOnEvent(function(data){
-		if(data.status=='begin'){
-			$("#panelProgress").modal({show:true,keyboard:false,backdrop:false});
-		};
-		if(data.status=="success"){
-			$("#panelProgress").modal('hide');	
-		}
-	});
-});
-
-</script>
-</h:head> 
-<h:body>
-
-
-<div class="modal fade" id="panelProgress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-     
-      <div class="modal-body">
-      <div class="progress progress-striped active">
-  <div id="loading" class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-    <label>Cargando...</label>
-  </div>
-</div>
-      </div>     
-    </div>
-  </div>
-</div>
-
-
-
-<h:panelGroup id="loginModal" layout="block" >
-<ui:include src="#{navigatorBean.loginPage}"></ui:include>	
-</h:panelGroup>
-
-
-<ui:insert name="header" >
-<ui:include src="/faces/fragments/header.xhtml"></ui:include>
-</ui:insert> 
-
-
-
-
-
-</h:body>
+      
+     <ui:composition template="/faces/templates/main.xhtml">
+  
+     <ui:define name="body">
+     	<f:view transient="true">
+     	<h:form id="transientForm" ></h:form>
+     	</f:view>
+     </ui:define>
+  
+     </ui:composition>  
+      
 </html>
