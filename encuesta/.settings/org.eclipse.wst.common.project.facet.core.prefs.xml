@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <root>
   <facet id="jst.jsf">
     <node name="libprov">
@@ -5,3 +6,12 @@
     </node>
   </facet>
 </root>
+=======
+<root>
+  <facet id="jst.jsf">
+    <node name="libprov">
+      <attribute name="provider-id" value="jsf-no-op-library-provider"/>
+    </node>
+  </facet>
+</root>
+>>>>>>> 2141b6f6b055bd6d6f48d7d57e0c81b59e2367c6
