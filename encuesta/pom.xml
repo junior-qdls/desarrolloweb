@@ -8,6 +8,16 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>encuesta Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+  <repositories>
+        <repository>  
+        <id>prime-repo</id>  
+        <name>PrimeFaces Maven Repository</name>  
+        <url>http://repository.primefaces.org</url>  
+        <layout>default</layout>  
+  	 	 </repository>  
+  </repositories>
+  
 <properties>
 <org.slf4j-version>1.6.6</org.slf4j-version>
 </properties>
@@ -55,6 +65,13 @@
 	      <version>1.0</version>
 	      <scope>provided</scope>
 	    </dependency>
+	    
+	    <!-- primefaces -->
+	    <dependency>  
+	        <groupId>org.primefaces</groupId>  
+	        <artifactId>primefaces</artifactId>  
+	        <version>4.0</version>  
+    	</dependency>  
             
 		<!-- Logging -->
 		<dependency>
@@ -74,6 +91,21 @@
 			<version>${org.slf4j-version}</version>
 			<scope>runtime</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.5</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+		</dependency>
+            
+		
+		
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -102,6 +134,9 @@
 
   <build>
     <finalName>encuesta</finalName>
+
+  
+    
      <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

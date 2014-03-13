@@ -15,13 +15,16 @@ public class MongoConnection {
 	private static final Logger logger = LoggerFactory.getLogger(MongoConnection.class);
 	private MongoClient mongoClient;
 	private DB db;
+
+	
 	@PostConstruct
-	public void initializeMongo(){
+	public void initializeMongo(){		
 		logger.info("The mongo connection is creating");
 		try {
-			mongoClient=new MongoClient();
+			mongoClient=new MongoClient(Constants.MONGO_URL);
 			db=mongoClient.getDB(Constants.DB_NAME);
 			boolean isAuthorized=db.authenticate(Constants.DB_USER, Constants.DB_PASSWORD.toCharArray());
+			
 			if(isAuthorized){
 				logger.info("the user is authorized");
 			}else{

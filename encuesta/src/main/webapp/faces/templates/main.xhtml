@@ -2,25 +2,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets" >
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" >
+      
 <h:head>
 <meta charset="utf-8"></meta>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"> </meta>
 
 <ui:include src="/faces/fragments/resources.xhtml"></ui:include>
 <script type="text/javascript">
-$(function(){
-	jsf.ajax.addOnEvent(function(data){
-		if(data.status=='begin'){
-			$("#panelProgress").modal({show:true,keyboard:false,backdrop:false});
-		};
-		if(data.status=="success"){
-			$("#panelProgress").modal('hide');	
-		}
-	});
-});
+// $(function(){
+// 	jsf.ajax.addOnEvent(function(data){
+// 		if(data.status=='begin'){
+// 			$("#panelProgress").modal({show:true,keyboard:false,backdrop:false});
+// 		};
+// 		if(data.status=="success"){
+// 			$("#panelProgress").modal('hide');				
+// 		}
+// 	});
+// });
 
 </script>
+
+
 </h:head> 
 <h:body>
 <div class="modal fade" id="panelProgress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -37,16 +41,21 @@ $(function(){
     </div>
   </div>
 </div>
+
+
 <h:panelGroup id="loginModal" layout="block" >
-<ui:include src="#{navigatorBean.loginPage}"></ui:include>	
+<h:form id="modalForm">
+<ui:include src="#{navigatorBean.loginPage}"></ui:include>
+</h:form>	
 </h:panelGroup>
+
+
+
 <ui:include src="/faces/fragments/header.xhtml"></ui:include>
+
+
  
 <ui:insert name="body" />
-
-
-
-
 
 </h:body>
 </html>

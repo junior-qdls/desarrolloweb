@@ -17,12 +17,14 @@ public class UserDaoImpl implements UserDao {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
 	
+	
 	@Inject
-	protected MongoConnection mongoConnection; 
-
+	private MongoConnection mongoConnection;
+	
 	@Override
 	public boolean validateUser(Usuario user) {
 		// TODO Auto-generated method stub
+	
 		DBObject userMongoObject= mongoConnection.getDb().getCollection(Constants.USUARIO_COLLECTION).findOne();
 		logger.info(" userMongoObject "+userMongoObject);
 //		String username=(String) userMongoObject.get("username");

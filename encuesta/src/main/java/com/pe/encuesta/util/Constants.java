@@ -4,7 +4,8 @@ public class Constants {
 
 	public static final String LOGIN_PAGE="/faces/fragments/login.xhtml";
 	
-	
+	//mongo url
+	public static final String MONGO_URL="troup.mongohq.com:10022";
 	
 	//credenciales
 	public static final String DB_NAME="encuestadb";

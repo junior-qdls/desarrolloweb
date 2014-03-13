@@ -9,9 +9,8 @@ import com.pe.encuesta.service.UserService;
 public class UserServiceImpl implements UserService {
 
 	@Inject
-	protected UserDao userDao;
-	
-	
+	private UserDao userDao;
+		
 	@Override
 	public boolean validateUser(Usuario user) {
 		// TODO Auto-generated method stub

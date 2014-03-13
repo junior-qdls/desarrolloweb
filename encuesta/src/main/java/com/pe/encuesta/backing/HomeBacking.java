@@ -14,8 +14,6 @@ public class HomeBacking implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = -1271121920177952122L;
-	
-	
-	
+
 
 }
