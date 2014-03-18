@@ -5,8 +5,6 @@ import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
-
 import com.mongodb.DBObject;
 import com.pe.encuesta.dao.UserDao;
 import com.pe.encuesta.model.Usuario;
@@ -27,6 +25,9 @@ public class UserDaoImpl implements UserDao {
 	
 		DBObject userMongoObject= mongoConnection.getDb().getCollection(Constants.USUARIO_COLLECTION).findOne();
 		logger.info(" userMongoObject "+userMongoObject);
+				
+		
+		
 //		String username=(String) userMongoObject.get("username");
 //		String password=(String)userMongoObject.get("clave");
 		return true;
